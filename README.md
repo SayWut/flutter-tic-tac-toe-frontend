@@ -1,16 +1,11 @@
 # flutter_tic_tac_toe_frontend
 
-A new Flutter project.
+This is the frontend of the tic tac toe game created with Flutter, GetX and Socket.IO.
 
-## Getting Started
+[The backend](https://github.com/SayWut/nodejs-tic-tac-toe-backend)
 
-This project is a starting point for a Flutter application.
+# Presentation
 
-A few resources to get you started if this is your first Flutter project:
+## Website
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/SayWut/repositories-assets/blob/master/tic-tac-toe/tic-tac-toe-website.gif?raw=true" alt="tic tac toe website" width="500"/>
