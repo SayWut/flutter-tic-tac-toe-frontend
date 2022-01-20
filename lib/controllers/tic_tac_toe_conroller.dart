@@ -7,6 +7,7 @@ class TicTacToeConroller extends GetxController {
   List<int>? winnerSquares;
   late bool enableButtons;
   late bool isGameover;
+  late bool isGameStarted;
   RxBool isConnected = false.obs;
   RxString gameStatusText = "".obs;
 
@@ -21,10 +22,13 @@ class TicTacToeConroller extends GetxController {
     });
 
     client.onDisconnect(() {
-      if (!isGameover) {
-        gameStatusText.value = "Couldn't find any player";
+      if (isGameStarted && !isGameover) {
+        gameStatusText.value = "Your opponent disconnected";
       }
+
       isConnected.value = false;
+      enableButtons = false;
+      update();
     });
 
     client.onUpdateGameData((gameData) {
@@ -50,6 +54,7 @@ class TicTacToeConroller extends GetxController {
     });
 
     client.onStartGame((gameData) {
+      isGameStarted = true;
       gameStatusText.value = "Game Started";
       enableButtons = client.socket.id == gameData.playerTurn;
       update();
@@ -107,6 +112,7 @@ class TicTacToeConroller extends GetxController {
     winnerSquares = null;
     enableButtons = false;
     isGameover = false;
+    isGameStarted = false;
     isConnected.value = false;
   }
 
